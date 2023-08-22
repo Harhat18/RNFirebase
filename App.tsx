@@ -33,7 +33,7 @@ const App = () => {
       <Button title="Sign Up" onPress={signUp} />
       <Button title="Sign In" onPress={signIn} />
       <Button title="Sign Out" onPress={signOut} />
-      <Button title="Sign Out" onPress={signOut} />
+      <Button title="Check User" onPress={signOut} />
     </SafeAreaView>
   );
 };
