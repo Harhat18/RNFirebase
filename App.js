@@ -23,16 +23,37 @@ const App = () => {
     const reference = database().ref('car/rentable');
     reference.set({
       brand: 'Audi',
-      model: 'A3',
+      model: 'A5',
       price: 128,
+    });
+  };
+  // DB veri güncelleme
+  const updateDB = () => {
+    const reference = database().ref('car/rentable');
+    reference.update({
+      model: 'A3',
+    });
+  };
+  // DB veri güncelleme
+  const pushDB = () => {
+    const reference = database().ref('car/rentable');
+    reference.push({
+      brand: 'Passat',
+      model: '81',
+      price: 650,
     });
   };
   return (
     <View>
-      <Text>App</Text>
+      <Text
+        style={{fontSize: 30, justifyContent: 'center', alignItems: 'center'}}>
+        Firebase Exmaple
+      </Text>
       <Button title="Check DB" onPress={checkDB} />
       <Button title="Listen DB" onPress={listenDB} />
       <Button title="Set DB" onPress={setDB} />
+      <Button title="Update DB" onPress={updateDB} />
+      <Button title="Push DB" onPress={pushDB} />
     </View>
   );
 };
