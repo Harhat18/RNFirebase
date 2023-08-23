@@ -18,11 +18,21 @@ const App = () => {
       console.log('User data: ', snapshot.val());
     });
   };
+  // DB veri girmek için
+  const setDB = () => {
+    const reference = database().ref('car/rentable');
+    reference.set({
+      brand: 'Audi',
+      model: 'A3',
+      price: 128,
+    });
+  };
   return (
     <View>
       <Text>App</Text>
       <Button title="Check DB" onPress={checkDB} />
       <Button title="Listen DB" onPress={listenDB} />
+      <Button title="Set DB" onPress={setDB} />
     </View>
   );
 };
